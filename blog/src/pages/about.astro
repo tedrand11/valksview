@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
 const pageTitle = "About Me";
 
 const identity = {
@@ -39,31 +40,83 @@ const primaryColor = "#B896D4";
 	</head>
 	<body>
 
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
+        <Navigation />
 
-		<h1>{pageTitle}</h1>
-        <h2>... and my new Astro site!</h2>
+		<section class="container">
+  <div class="about-card">
+    <header class="about-header">
+      <h1>About ValksView</h1>
+      <p class="tagline">South San Francisco Perspectives on the Rise of Ballhalla</p>
+    </header>
 
-        <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+    <div class="about-content">
+      <p>
+        Hi, I’m <strong>Ted</strong>. I’m a South San Francisco-based patent attorney by day and a dedicated chronicler of the <strong>Golden State Valkyries</strong> by night. 
+      </p>
 
-        <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-        <p>Here are a few facts about me:</p>
-		<ul>
-		<li>My name is {identity.firstName}.</li>
-		<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-		{identity.hobbies.length >= 2 &&
-			<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-		}
-		</ul>
-		<p>My skills are:</p>
-		<ul>
-			{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
-		{happy && <p>I am happy to be learning Astro!</p>}
+      <h2>Why ValksView?</h2>
+      <p>
+        As a lifelong supporter of Bay Area sports—from the 49ers and Giants to the Warriors—I’ve been waiting for this moment since the team was first announced. <strong>ValksView</strong> is my way of documenting the arrival of WNBA legends at Chase Center.
+      </p>
 
-		{finished && <p>I finished this tutorial!</p>}
+      <div class="focus-areas">
+        <h3>What I Cover:</h3>
+        <ul>
+          <li><strong>Tactical Deep-Dives:</strong> Analyzing game strategies, roster depth, and the evolution of the team's chemistry with a focus on detail[cite: 1].</li>
+          <li><strong>The "Ballhalla" Experience:</strong> Capturing the electric atmosphere at home games, from the sea of Valkyrie Violet in Thrive City to the intensity of the crowd.</li>
+          <li><strong>Roster Spotlights:</strong> Tracking standout performances from players like <strong>Janelle Salaün</strong> and <strong>Veronica Burton</strong> as they lead this historic inaugural season[cite: 2].</li>
+          <li><strong>A Fan’s Perspective:</strong> Documenting the journey from the road win in Seattle to the perfect 2-0 home start[cite: 2].</li>
+        </ul>
+      </div>
 
-		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+      <h2>Beyond the Court</h2>
+      <p>
+        When I’m not at Chase Center or drafting legal arguments, I’m usually exploring the best of Northern California with my family—my wife, our son Oliver, and our pets, <strong>Cheeto and Luna</strong>[cite: 1]. Whether we're camping at Mount Madonna or hiking local trails, I’m always looking for the next great Bay Area story[cite: 1].
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-card {
+    background-color: var(--valkyrie-white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--valkyrie-violet);
+    padding-bottom: 1rem;
+  }
+
+  .tagline {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  .focus-areas {
+    background-color: var(--valkyrie-gray);
+    padding: 1.5rem;
+    border-left: 5px solid var(--valkyrie-violet);
+    margin: 2rem 0;
+  }
+
+  .focus-areas h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--valkyrie-black);
+  }
+
+  .about-content h2 {
+    border-bottom: none;
+    margin-top: 2rem;
+  }
+</style>
 	</body>
 </html>

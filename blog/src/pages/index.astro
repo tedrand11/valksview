@@ -1,5 +1,7 @@
 ---
-const pageTitle = "Home Page";
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+const pageTitle = "ValksView";
 ---
 
 <html lang="en">
@@ -10,8 +12,137 @@ const pageTitle = "Home Page";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style>
+			/* Splash Page Specific Overrides */
+			.hero {
+				background-color: var(--valkyrie-black);
+				color: var(--valkyrie-white);
+				padding: 4rem 2rem;
+				text-align: center;
+				border-bottom: 8px solid var(--valkyrie-gold);
+			}
+
+			.hero h1 {
+				font-size: 3.5rem;
+				margin-bottom: 0.5rem;
+				border-bottom: none; /* Removing the standard h1 border for the splash title */
+				color: var(--valkyrie-violet);
+			}
+
+			.hero p {
+				font-size: 1.2rem;
+				max-width: 600px;
+				margin: 0 auto;
+				color: var(--valkyrie-gray);
+			}
+
+			.cta-button {
+				display: inline-block;
+				margin-top: 2rem;
+				padding: 1rem 2rem;
+				background-color: var(--valkyrie-violet);
+				color: var(--valkyrie-black);
+				font-family: var(--font-headers);
+				text-transform: uppercase;
+				font-weight: bold;
+				border-radius: 4px;
+				transition: transform 0.2s ease;
+			}
+
+			.cta-button:hover {
+				background-color: var(--valkyrie-gold);
+				transform: scale(1.05);
+				color: var(--valkyrie-black);
+			}
+
+			.content-feed-placeholder {
+				padding: 3rem 0;
+				text-align: center;
+				border: 2px dashed var(--valkyrie-violet);
+				margin-top: 2rem;
+				border-radius: 8px;
+				color: #888;
+			}
+
+			.carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--valkyrie-violet) transparent;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+}
+
+.carousel-item {
+    flex: 0 0 320px; /* Width of a standard Instagram embed */
+    scroll-snap-align: start;
+    display: inline-block;
+    vertical-align: top;
+    background: var(--valkyrie-gray);
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Customizing the scrollbar for a "Ballhalla" feel */
+.carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+.carousel-container::-webkit-scrollbar-thumb {
+    background: var(--valkyrie-violet);
+    border-radius: 10px;
+}
+		</style>
 	</head>
 	<body>
-		<h1>{pageTitle}</h1>
+		<Navigation />
+		<header class="hero">
+        <div class="container">
+            <h1>VALKS VIEW</h1>
+            <p>Your independent source for Golden State Valkyries news, deep-dive analysis, and court-side perspectives.</p>
+            <a href="#feed" class="cta-button">Read Latest Posts</a>
+        </div>
+    </header>
+
+    <main class="container" id="feed">
+        <section>
+            <h2>Latest from the Court</h2>
+            <!-- Feed Placeholder -->
+            <div class="content-feed-placeholder">
+                <p>Post feed loading soon... Stay tuned for the next game recap!</p>
+            </div>
+        </section>
+
+		<section class="container">
+			<h2>Scenes from Ballhalla</h2>
+			<div class="carousel-container">
+				<div class="carousel-track">
+					<!-- Replace 'YOUR_INSTAGRAM_URL' with your actual post links -->
+					<div class="carousel-item">
+						<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYLnD1ulGgY/?img_index=1" data-instgrm-version="14"></blockquote>
+					</div>
+					<div class="carousel-item">
+						<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYLeykBRP0H/" data-instgrm-version="14"></blockquote>
+					</div>
+					<div class="carousel-item">
+						<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYLfIVGGje0/?img_index=1" data-instgrm-version="14"></blockquote>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Instagram Embed Script -->
+		<script async src="//www.instagram.com/embed.js"></script>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ValksView.com. All rights reserved.</p>
+        <p>This site is a fan-run blog and is not affiliated with the Golden State Valkyries or the WNBA.</p>
+    </footer>
 	</body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValksView | Coming Soon</title>
+    <style>
+        :root {
+            --valkyrie-violet: #AD96DC;
+            --valkyrie-black: #010101;
+            --valkyrie-gold: #C5A847;
+            --font-headers: Impact, Haettenschweiler, "Arial Black", sans-serif;
+            --font-main: "Trebuchet MS", "Lucida Grande", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--valkyrie-black);
+            font-family: var(--font-main);
+            color: white;
+            overflow: hidden;
+        }
+
+        .splash-container {
+            text-align: center;
+            z-index: 2;
+        }
+
+        /* The "Ballhalla" Pulse Animation */
+        .portal-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--valkyrie-violet);
+            border-radius: 50%;
+            animation: pulse 3s infinite ease-out;
+            z-index: 1;
+        }
+
+        .portal-ring:nth-child(2) { animation-delay: 1s; }
+        .portal-ring:nth-child(3) { animation-delay: 2s; }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+        }
+
+        h1 {
+            font-family: var(--font-headers);
+            font-size: 5rem;
+            letter-spacing: 4px;
+            margin: 0;
+            color: var(--valkyrie-white);
+            text-shadow: 0 0 20px var(--valkyrie-violet);
+        }
+
+        .status {
+            color: var(--valkyrie-gold);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .loading-bar-container {
+            width: 200px;
+            height: 4px;
+            background: #333;
+            margin: 20px auto;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-bar-progress {
+            width: 60%;
+            height: 100%;
+            background: var(--valkyrie-violet);
+            animation: slide 2s infinite linear;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        p {
+            font-size: 1rem;
+            opacity: 0.8;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pulsing Rings Background -->
+    <div class="portal-ring"></div>
+    <div class="portal-ring"></div>
+    <div class="portal-ring"></div>
+
+    <div class="splash-container">
+        <h1>VALKS VIEW</h1>
+        <div class="status">Arrival in Ballhalla: Pending</div>
+        
+        <div class="loading-bar-container">
+            <div class="loading-bar-progress"></div>
+        </div>
+
+        <p>Documenting the 2-0 start and the rise of the Golden State Valkyries. Content loading for the official release.</p>
+    </div>
+
+</body>
+</html>

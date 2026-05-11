@@ -1,22 +1,134 @@
-html {
-  background-color: #171717;
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+/* --- VALKSVIEW.COM GLOBAL STYLES --- */
+
+:root {
+  /* Official-inspired Color Palette */
+  --valkyrie-violet: #AD96DC;
+  --valkyrie-black: #010101;
+  --valkyrie-white: #FFFFFF;
+  --valkyrie-gold: #C5A847; /* Adjusted from yellow to gold */
+  --valkyrie-gray: #F4F4F4;
+  
+  /* Typography - Using Trebuchet MS as requested */
+  --font-main: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  --font-headers: Impact, Haettenschweiler, "Arial Black", sans-serif;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: cornsilk;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--valkyrie-black);
+  background-color: var(--valkyrie-white);
 }
 
-* {
-  box-sizing: border-box;
+/* Typography Hierarchy */
+h1, h2, h3 {
+  font-family: var(--font-headers);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--valkyrie-black);
+  margin-bottom: 1rem;
 }
 
 h1 {
-  margin: 1rem 0;
   font-size: 2.5rem;
+  border-bottom: 4px solid var(--valkyrie-violet);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--valkyrie-violet);
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--valkyrie-violet);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--valkyrie-gold);
+}
+
+/* Layout Containers */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Blog Post Specifics */
+article {
+  margin-bottom: 4rem;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin: 1.5rem 0;
+}
+
+article em {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats Styling */
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+strong {
+  color: var(--valkyrie-violet);
+}
+
+/* Navigation Mockup */
+nav {
+  background-color: var(--valkyrie-violet);
+  padding: 1rem 0;
+  color: white;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  color: var(--valkyrie-violet);
+}
+
+/* Footer */
+footer {
+  background-color: var(--valkyrie-gray);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 4rem;
+  border-top: 1px solid #ddd;
 }
